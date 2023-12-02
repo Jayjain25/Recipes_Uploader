@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'home',
     'add_receipes',
     'search',
-    'account',
     'log_reg',
     'login_home',
 ]
