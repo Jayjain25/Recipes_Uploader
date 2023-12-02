@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block start %}
+<br>
+    <div class="container">
+      <div class="mt-2">
+        <div class="mx-auto">
+          <form>
+            <div class="container">
+             <div class="mb-3">
+               <label for="searchfood" class="form-label">Search Food</label>
+              <input type="text" name = "search"  class="form-control">
+            </div>
+            <button class="btn btn-primary">Search</button>
+          </div>
+        </form>
+        </div>
+
+      </div>  
+        <table class="table  shadow border-5 mt-3 " style="border-radius: 10px; ">
+            <thead>
+              
+              <tr>
+                <th scope="col">S No </th>
+                <th scope="col">Receipe Name</th>
+                <th scope="col">Receipe Description</th>
+                <th scope="col">Receipe Image</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              {% for receipe in search %}
+              <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{receipe.receipe_name}}</td>
+                <td> {{receipe.receipe_description}} </td>
+                <td> 
+                 <img src="/media/{{receipe.receipe_image}}" style="height: 200px;" width="200px" >
+                </td>
+                
+              </tr>
+              {% endfor %}
+              
+            </tbody>
+          </table>
+    </div>
+{% endblock %}

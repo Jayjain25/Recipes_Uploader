@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block start %}
+
+<h1 style="text-align: center; background-color: cadetblue; " class="container mt-2">Welcome to the Receipe Site</h1><br/>
+
+{% for receipe in home %}
+<div>
+<div class="container accordion-body" style="text-align: center;"><img src="/media/{{receipe.receipe_image}}" ></div>
+<div class="container accordion-body" style="text-align: center; font-size: xx-large; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{receipe.receipe_name}}</div> 
+<div class="container accordion-body split ">{{receipe.receipe_description}}</div>
+<hr>
+</div>
+{% endfor %}
+
+{% endblock %}

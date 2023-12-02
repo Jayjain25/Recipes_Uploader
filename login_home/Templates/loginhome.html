@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block start %}
+<br>
+    <div class="container">
+       
+        <table class="table  shadow border-5 mt-3 " style="border-radius: 10px; ">
+            <thead>
+              
+              <tr>
+                <th scope="col">S No </th>
+                <th scope="col">Receipe Name</th>
+                <th scope="col">Receipe Description</th>
+                <th scope="col">Receipe Image</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for receipe in home %}
+              <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{receipe.receipe_name}}</td>
+                <td> {{receipe.receipe_description}} </td>
+                <td> 
+                 <img src="/media/{{receipe.receipe_image}}" style="height: 200px;" width="200px" >
+                </td>
+                <td>
+                 <a href="/delete-receipe/{{receipe.id}}" class="btn btn-danger m-3">Delete</a>
+                 <a href="/update-receipe/{{receipe.id}}" class="btn btn-success m-3">Update</a>
+                </td>
+              </tr>
+              {% endfor %}
+              
+            </tbody>
+          </table>
+    </div>
+{% endblock %}
